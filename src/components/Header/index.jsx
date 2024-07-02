@@ -14,7 +14,7 @@ export const Header = () => {
       <Container maxWidth="lg">
         <div className={styles.inner}>
           <a className={styles.logo} href="/">
-            <div>Toktobaev BLOG</div>
+            <div>TOKTOBAEV BLOG</div>
           </a>
           <div className={styles.buttons}>
             {isAuth ? (

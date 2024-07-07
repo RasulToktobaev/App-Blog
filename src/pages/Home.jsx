@@ -35,6 +35,7 @@ export const Home = () => {
               viewsCount={150}
               commentsCount={3}
               tags={['react', 'fun', 'typescript']}
+              isLoading={true}
               isEditable
             />
           ))}

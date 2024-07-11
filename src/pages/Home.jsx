@@ -13,9 +13,13 @@ export const Home = () => {
   const dispatch = useDispatch();
   const {posts, tags} = useSelector(state => state.posts);
 
+  const isPostsLoading = posts.status === 'loading';
+
   React.useEffect(() => {
     dispatch(fetchPosts());
   }, [])
+
+  console.log(posts);
 
   return (
     <>
@@ -25,7 +29,7 @@ export const Home = () => {
       </Tabs>
       <Grid container spacing={4}>
         <Grid xs={8} item>
-          {[...Array(5)].map(() => (
+          {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) => (
             <Post
               id={1}
               title="Roast the code #1 | Rock Paper Scissors"

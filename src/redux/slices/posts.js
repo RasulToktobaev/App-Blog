@@ -22,8 +22,8 @@ const postSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: {
-        [fetchPosts.pending] : (state, actions) => {
-            
+        [fetchPosts.pending] : (state) => {
+            state.posts.status = 'loading';
         }
     }
 });

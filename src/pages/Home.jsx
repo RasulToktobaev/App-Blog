@@ -11,7 +11,7 @@ import { fetchPosts } from '../redux/slices/posts';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const {posts, tags} = useSelector(state => state.posts);
+  const { posts, tags } = useSelector(state => state.posts);
 
   const isPostsLoading = posts.status === 'loading';
 
@@ -29,7 +29,9 @@ export const Home = () => {
       </Tabs>
       <Grid container spacing={4}>
         <Grid xs={8} item>
-          {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) => (
+          {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) => isPostsLoading ? (
+            <Post key={index}  isLoading={true} />
+          ) : (
             <Post
               id={obj._id}
               title={obj.title}
@@ -43,10 +45,11 @@ export const Home = () => {
               viewsCount={150}
               commentsCount={3}
               tags={['react', 'fun', 'typescript']}
-              isLoading={true}
+            
               isEditable
             />
-          ))}
+            ),
+          )}
         </Grid>
         <Grid xs={4} item>
           <TagsBlock items={['react', 'typescript', 'заметки']} isLoading={false} />

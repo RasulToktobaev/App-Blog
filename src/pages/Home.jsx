@@ -44,7 +44,7 @@ export const Home = () => {
               createdAt={'12 июня 2022 г.'}
               viewsCount={150}
               commentsCount={3}
-              tags={['react', 'fun', 'typescript']}
+              tags={['javascript', 'fun', 'typescript']}
             
               isEditable
             />

@@ -6,6 +6,11 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
     return data;
 });
 
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+    const { data } = await axios.get('/posts')
+    return data;
+});
+
 const initialState = {
     posts: {
         items: [],

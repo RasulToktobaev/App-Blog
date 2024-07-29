@@ -8,6 +8,7 @@ import axios from "axios";
 export const FullPost = () => {
 
   const [data, setData] = React.useState();
+  const [isLoading, setIsLoading] = React.useState();
 
   const { id } = useParams()
 
@@ -17,14 +18,18 @@ export const FullPost = () => {
     }).catch(err => {
       console.warn(err);
       alert('Ошибка при получений статьи')
-    })
+    });
   }, [])
+
+  if (isLoading) {
+    return <Post isLoading={isLoading} />
+  }
 
 
   return (
     <>
       <Post
-        id={1}
+        id={data._id}
         title="Roast the code #1 | Rock Paper Scissors"
         imageUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--UnAfrEG8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/icohm5g0axh9wjmu4oc3.png"
         user={{

@@ -18,7 +18,7 @@ export const Home = () => {
   React.useEffect(() => {
     dispatch(fetchPosts());
     dispatch(fetchTags())
-  }, [dispatch])
+  }, [])
 
   console.log(posts);
 

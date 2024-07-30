@@ -17,7 +17,7 @@ export const FullPost = () => {
       setData(res.data)
     }).catch(err => {
       console.warn(err);
-      alert('Ошибка при получений статей')
+      alert('Ошибка при получений статьи')
     });
   }, [])
 

@@ -30,4 +30,7 @@ const authSlice = createSlice({
             state.data = null;
         }
     }
-})
+});
+
+export const authReducer = authSlice.reducer;
+

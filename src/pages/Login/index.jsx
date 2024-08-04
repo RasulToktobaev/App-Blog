@@ -14,7 +14,8 @@ export const Login = () => {
     defaultValues: {
       email: "",
       password: ""
-    }
+    },
+    mode: "onChange"
   });
 
   const onSubmit = (values) => {
@@ -31,16 +32,18 @@ export const Login = () => {
         <TextField
           className={styles.field}
           label="E-Mail"
-          error
-          helperText="Неверно указана почта"
+          error={Boolean(errors.email?.message)}
+          helperText={errors.email?.message}
           {...register("email", { required: "Укажите почту" })}
           fullWidth
         />
         <TextField className={styles.field}
           label="Пароль"
+          error={Boolean(errors.password?.message)}
+          helperText={errors.password?.message}
           {...register("password", { required: "Укажите пароль" })}
           fullWidth
-           />
+        />
         <Button size="large" variant="contained" fullWidth>
           Войти
         </Button>

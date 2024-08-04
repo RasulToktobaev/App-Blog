@@ -8,6 +8,20 @@ import { useForm } from "react-hook-form";
 import styles from "./Login.module.scss";
 
 export const Login = () => {
+
+  const { register, handleSubmit, setError, formState: { errors, isValid },
+   } = useForm({
+    defaultValues: {
+      email: "",
+      password: ""
+    }
+  });
+
+  const onSubmit = (values) => {
+    console.log(values);
+    
+  }
+
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">

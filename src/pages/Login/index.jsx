@@ -33,9 +33,14 @@ export const Login = () => {
           label="E-Mail"
           error
           helperText="Неверно указана почта"
+          {...register("email", { required: "Укажите почту" })}
           fullWidth
         />
-        <TextField className={styles.field} label="Пароль" fullWidth />
+        <TextField className={styles.field}
+          label="Пароль"
+          {...register("password", { required: "Укажите пароль" })}
+          fullWidth
+           />
         <Button size="large" variant="contained" fullWidth>
           Войти
         </Button>

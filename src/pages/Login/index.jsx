@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
@@ -13,7 +14,7 @@ export const Login = () => {
   } = useForm({
     defaultValues: {
       email: "",
-      password: ""
+      password: "",
     },
     mode: "onChange"
   });

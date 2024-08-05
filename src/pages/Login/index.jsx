@@ -7,9 +7,10 @@ import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 
 import styles from "./Login.module.scss";
+import { fetchAuth } from "../../redux/slices/auth";
 
 export const Login = () => {
-
+  const dispatch = useDispatch();
   const { register, handleSubmit, setError, formState: { errors, isValid },
   } = useForm({
     defaultValues: {
@@ -20,8 +21,7 @@ export const Login = () => {
   });
 
   const onSubmit = (values) => {
-    console.log(values);
-
+      dispatch(fetchAuth(values))
   }
 
   return (

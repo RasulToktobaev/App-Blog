@@ -34,6 +34,7 @@ export const Login = () => {
           label="E-Mail"
           error={Boolean(errors.email?.message)}
           helperText={errors.email?.message}
+          type="email"
           {...register("email", { required: "Укажите почту" })}
           fullWidth
         />

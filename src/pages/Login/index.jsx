@@ -27,7 +27,7 @@ export const Login = () => {
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">
-        Зайти в аккаунт
+        Вход в аккаунт
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField

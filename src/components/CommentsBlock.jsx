@@ -26,7 +26,7 @@ export const CommentsBlock = ({ items, children, isLoading = true }) => {
               {isLoading ? (
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <Skeleton variant="text" height={25} width={120} />
-                  <Skeleton variant="text" height={18} width={230} />
+                  <Skeleton variant="text" height={17} width={230} />
                 </div>
               ) : (
                 <ListItemText

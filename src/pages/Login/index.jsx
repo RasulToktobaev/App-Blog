@@ -7,9 +7,10 @@ import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.scss";
-import { fetchAuth } from "../../redux/slices/auth";
+import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
 
 export const Login = () => {
+  const isAuth  = useSelector(selectIsAuth)
   const dispatch = useDispatch();
   const { register, handleSubmit, setError, formState: { errors, isValid },
   } = useForm({

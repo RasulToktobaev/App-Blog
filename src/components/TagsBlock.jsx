@@ -25,7 +25,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
                   <TagIcon />
                 </ListItemIcon>
                 {isLoading ? (
-                  <Skeleton width={100} />
+                  <Skeleton width={} />
                 ) : (
                   <ListItemText primary={name} />
                 )}

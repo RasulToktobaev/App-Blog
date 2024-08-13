@@ -7,7 +7,7 @@
   div {
     &:before,
     &:after {
-      display: flex;
+      display: none;
     }
   }
 }

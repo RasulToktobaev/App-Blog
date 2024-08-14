@@ -16,6 +16,12 @@ const initialState = {
 const authSlice = createSlice({
     name:'auth',
     initialState,
+    reducers: {
+        logout: (state) => {
+            state.data = null;
+            state.status = 'loaded';
+        }
+    },
     extraReducers: {
         [fetchAuth.pending]: (state) => {
            state.status = 'loading';

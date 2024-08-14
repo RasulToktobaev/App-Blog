@@ -14,21 +14,20 @@ const initialState = {
 };
 
 const authSlice = createSlice({
-    name:'auth',
+    name: 'auth',
     initialState,
     reducers: {
         logout: (state) => {
             state.data = null;
-            state.status = 'loaded';
         }
     },
     extraReducers: {
         [fetchAuth.pending]: (state) => {
-           state.status = 'loading';
+            state.status = 'loading';
             state.data = null;
         },
         [fetchAuth.fulfilled]: (state, action) => {
-            state.status ='loaded';
+            state.status = 'loaded';
             state.data = action.payload;
         },
         [fetchAuth.rejected]: (state) => {
@@ -41,4 +40,6 @@ const authSlice = createSlice({
 export const selectIsAuth = state => Boolean(state.auth.data)
 
 export const authReducer = authSlice.reducer;
+
+export const { logout } = authSlice.actions
 

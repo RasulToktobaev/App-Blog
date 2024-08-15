@@ -32,8 +32,6 @@ export const Login = () => {
       window.localStorage.setItem('token', data.payload.token);
     }
 
-
-
     if (isAuth) {
       return <Navigate to="/" />;
     }

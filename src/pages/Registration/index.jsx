@@ -5,6 +5,9 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import styles from './Login.module.scss';
+import { useDispatch, useSelector } from "react-redux";
+import { useForm } from "react-hook-form";
+import { Navigate } from "react-router-dom";
 import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
 
 export const Registration = () => {

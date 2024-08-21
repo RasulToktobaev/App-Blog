@@ -60,7 +60,7 @@ export const Registration = () => {
             helperText={errors.password?.message}
             type="password"
             {...register("password", { required: "Укажите пароль" })} className={styles.field} label="Пароль" fullWidth />
-          <Button type='submit' size="large" variant="contained" fullWidth>
+          <Button disabled={isValid} type='submit' size="large" variant="contained" fullWidth>
             Зарегистрироваться
           </Button>
         </form>

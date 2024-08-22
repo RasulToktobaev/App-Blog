@@ -23,6 +23,8 @@ export const Registration = () => {
     mode: "onChange"
   });
 
+
+
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
 

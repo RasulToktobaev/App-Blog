@@ -7,13 +7,13 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
+import { fetchRegister, selectIsAuth } from "../../redux/slices/auth";
 import styles from './Login.module.scss';
 
 export const Registration = () => {
   const isAuth = useSelector(selectIsAuth)
   const dispatch = useDispatch();
-  const { register, handleSubmit, setError, formState: { errors, isValid },
+  const { register, handleSubmit, formState: { errors, isValid },
   } = useForm({
     defaultValues: {
       fullName: "Вася Пупкин",
@@ -26,7 +26,7 @@ export const Registration = () => {
 
 
   const onSubmit = async (values) => {
-    const data = await dispatch(fetchAuth(values));
+    const data = await dispatch(fetchRegister(values));
 
     if (!data.payload) {
       return alert('Не удалось авторизоваться !')

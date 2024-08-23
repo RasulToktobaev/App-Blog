@@ -12,7 +12,7 @@ import styles from "./Login.module.scss";
 export const Login = () => {
   const isAuth = useSelector(selectIsAuth)
   const dispatch = useDispatch();
-  const { register, handleSubmit, setError, formState: { errors, isValid },
+  const { register, handleSubmit,  formState: { errors, isValid },
   } = useForm({
     defaultValues: {
       email: "test@test.ru",

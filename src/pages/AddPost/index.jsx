@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField'
 import 'easymde/dist/easymde.min.css'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 import SimpleMDE from 'react-simplemde-editor'
 import { selectIsAuth } from '../../redux/slices/auth'
 import styles from './AddPost.module.scss'
@@ -35,6 +36,10 @@ export const AddPost = () => {
 		}),
 		[]
 	)
+
+	if (!isAuth) {
+		return <Navigate to="/" />
+	}
 
 	return (
 		<Paper style={{ padding: 30 }}>

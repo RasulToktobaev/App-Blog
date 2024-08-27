@@ -64,7 +64,7 @@ export const AddPost = () => {
 			<TextField
 				classes={{ root: styles.title }}
 				variant="standard"
-				placeholder="Заголовок"
+				placeholder="Заголовок статьи ..."
 				fullWidth
 			/>
 			<TextField

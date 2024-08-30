@@ -67,12 +67,16 @@ export const AddPost = () => {
 				classes={{ root: styles.title }}
 				variant="standard"
 				placeholder="Заголовок статьи ..."
+				value={title}
+				onChange={(e) => setTitle(e.target.value)}
 				fullWidth
 			/>
 			<TextField
 				classes={{ root: styles.tags }}
 				variant="standard"
 				placeholder="Тэги"
+				value={tags}
+				onChange={(e) => setTitle(e.target.value)}
 				fullWidth
 			/>
 			<SimpleMDE

@@ -13,6 +13,8 @@ export const AddPost = () => {
 	const isAuth = useSelector(selectIsAuth)
 	const imageUrl = ''
 	const [value, setValue] = React.useState('')
+	const [title, setTitle] = React.useState('')
+	const [tags, setTags] = React.useState('')
 
 	const handleChangeFile = () => {}
 

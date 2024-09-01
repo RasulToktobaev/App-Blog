@@ -28,7 +28,7 @@ export const AddPost = () => {
 		() => ({
 			spellChecker: false,
 			maxHeight: '400px',
-			autofocus: false,
+			autofocus: true,
 			placeholder: 'Введите текст...',
 			status: false,
 			autosave: {

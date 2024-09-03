@@ -15,6 +15,7 @@ export const AddPost = () => {
 	const [value, setValue] = React.useState('')
 	const [title, setTitle] = React.useState('')
 	const [tags, setTags] = React.useState('')
+	const inputRef = React.useRef(null)
 
 	const handleChangeFile = () => {}
 

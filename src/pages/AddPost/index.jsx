@@ -15,7 +15,7 @@ export const AddPost = () => {
 	const [value, setValue] = React.useState('')
 	const [title, setTitle] = React.useState('')
 	const [tags, setTags] = React.useState('')
-	const inputRef = React.useRef(null)
+	const inputFileRef = React.useRef(null)
 
 	const handleChangeFile = () => {}
 
@@ -46,10 +46,19 @@ export const AddPost = () => {
 
 	return (
 		<Paper style={{ padding: 30 }}>
-			<Button variant="outlined" size="large">
+			<Button
+				onClick={() => inputFileRef.current.click()}
+				variant="outlined"
+				size="large"
+			>
 				Загрузить превью
 			</Button>
-			<input type="file" onChange={handleChangeFile} hidden />
+			<input
+				ref={inputFileRef}
+				type="file"
+				onChange={handleChangeFile}
+				hidden
+			/>
 			{imageUrl && (
 				<Button variant="contained" color="error" onClick={onClickRemoveImage}>
 					Удалить

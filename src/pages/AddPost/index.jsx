@@ -76,7 +76,7 @@ export const AddPost = () => {
 				variant="standard"
 				placeholder="Тэги"
 				value={tags}
-				onChange={(e) => setTitle(e.target.value)}
+				onChange={(e) => setTags(e.target.value)}
 				fullWidth
 			/>
 			<SimpleMDE

@@ -6,6 +6,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import SimpleMDE from 'react-simplemde-editor'
+import axios from '../../axios'
 import { selectIsAuth } from '../../redux/slices/auth'
 import styles from './AddPost.module.scss'
 
@@ -17,7 +18,17 @@ export const AddPost = () => {
 	const [tags, setTags] = React.useState('')
 	const inputFileRef = React.useRef(null)
 
-	const handleChangeFile = () => {}
+	const handleChangeFile = async (event) => {
+		try {
+			const formData = new FormData()
+			const file = event.target.files[0]
+			formData.append('image', file)
+			const { data } = await axios.post('/upload', formData)
+		} catch (err) {
+			console.warn(err)
+			alert('Ошибка при загрузке файла')
+		}
+	}
 
 	const onClickRemoveImage = () => {}
 

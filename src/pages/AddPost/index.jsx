@@ -12,7 +12,6 @@ import styles from './AddPost.module.scss'
 
 export const AddPost = () => {
 	const isAuth = useSelector(selectIsAuth)
-	const imageUrl = ''
 	const [value, setValue] = React.useState('')
 	const [title, setTitle] = React.useState('')
 	const [tags, setTags] = React.useState('')
@@ -25,6 +24,7 @@ export const AddPost = () => {
 			const file = event.target.files[0]
 			formData.append('image', file)
 			const { data } = await axios.post('/upload', formData)
+			setImageUrl(data.url)
 		} catch (err) {
 			console.warn(err)
 			alert('Ошибка при загрузке файла')

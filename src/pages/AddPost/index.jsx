@@ -16,6 +16,7 @@ export const AddPost = () => {
 	const [value, setValue] = React.useState('')
 	const [title, setTitle] = React.useState('')
 	const [tags, setTags] = React.useState('')
+	const [imageUrl, setImageUrl] = React.useState('')
 	const inputFileRef = React.useRef(null)
 
 	const handleChangeFile = async (event) => {
@@ -71,16 +72,20 @@ export const AddPost = () => {
 				hidden
 			/>
 			{imageUrl && (
-				<Button variant="contained" color="error" onClick={onClickRemoveImage}>
-					Удалить
-				</Button>
-			)}
-			{imageUrl && (
-				<img
-					className={styles.image}
-					src={`http://localhost:4444${imageUrl}`}
-					alt="Uploaded"
-				/>
+				<>
+					<Button
+						variant="contained"
+						color="error"
+						onClick={onClickRemoveImage}
+					>
+						Удалить
+					</Button>
+					<img
+						className={styles.image}
+						src={`http://localhost:4444${imageUrl}`}
+						alt="Uploaded"
+					/>
+				</>
 			)}
 			<br />
 			<br />

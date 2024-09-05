@@ -12,6 +12,7 @@ import styles from './AddPost.module.scss'
 
 export const AddPost = () => {
 	const isAuth = useSelector(selectIsAuth)
+	const [isLoading, setLoading] = React.useState(false)
 	const [value, setValue] = React.useState('')
 	const [title, setTitle] = React.useState('')
 	const [tags, setTags] = React.useState('')

@@ -13,7 +13,7 @@ import styles from './AddPost.module.scss'
 export const AddPost = () => {
 	const isAuth = useSelector(selectIsAuth)
 	const [isLoading, setLoading] = React.useState(false)
-	const [value, setValue] = React.useState('')
+	const [text, setText] = React.useState('')
 	const [title, setTitle] = React.useState('')
 	const [tags, setTags] = React.useState('')
 	const [imageUrl, setImageUrl] = React.useState('')
@@ -39,6 +39,21 @@ export const AddPost = () => {
 	const onChange = React.useCallback((value) => {
 		setValue(value)
 	}, [])
+
+	const onSubmit = async () => {
+		try {
+			setLoading(true)
+
+			const fields = {
+				title,
+				imageUrl,
+				tags,
+				text,
+			}
+
+			const { data } = await axios.post('/posts', fields)
+		} catch (err) {}
+	}
 
 	const options = React.useMemo(
 		() => ({
@@ -110,12 +125,12 @@ export const AddPost = () => {
 			/>
 			<SimpleMDE
 				className={styles.editor}
-				value={value}
+				value={text}
 				onChange={onChange}
 				options={options}
 			/>
 			<div className={styles.buttons}>
-				<Button size="large" variant="contained">
+				<Button onClick={onSubmit} size="large" variant="contained">
 					Опубликовать
 				</Button>
 				<a href="/">

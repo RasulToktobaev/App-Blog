@@ -57,7 +57,10 @@ export const AddPost = () => {
 			const id = data._id
 
 			navigate(`/post/${id}`)
-		} catch (err) {}
+		} catch (err) {
+			console.warn(err)
+			alert('Ошибка при создании статьи')
+		}
 	}
 
 	const options = React.useMemo(

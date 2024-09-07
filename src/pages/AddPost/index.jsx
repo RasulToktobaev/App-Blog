@@ -4,13 +4,14 @@ import TextField from '@mui/material/TextField'
 import 'easymde/dist/easymde.min.css'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import SimpleMDE from 'react-simplemde-editor'
 import axios from '../../axios'
 import { selectIsAuth } from '../../redux/slices/auth'
 import styles from './AddPost.module.scss'
 
 export const AddPost = () => {
+	const navigate = useNavigate()
 	const isAuth = useSelector(selectIsAuth)
 	const [isLoading, setLoading] = React.useState(false)
 	const [text, setText] = React.useState('')
@@ -53,7 +54,9 @@ export const AddPost = () => {
 
 			const { data } = await axios.post('/posts', fields)
 
-			const 
+			const id = data._id
+
+			navigate(`/post/${id}`)
 		} catch (err) {}
 	}
 

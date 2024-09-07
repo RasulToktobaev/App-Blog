@@ -52,6 +52,8 @@ export const AddPost = () => {
 			}
 
 			const { data } = await axios.post('/posts', fields)
+
+			const 
 		} catch (err) {}
 	}
 

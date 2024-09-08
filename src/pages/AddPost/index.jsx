@@ -38,7 +38,7 @@ export const AddPost = () => {
 	}
 
 	const onChange = React.useCallback((value) => {
-		setValue(value)
+		setText(value)
 	}, [])
 
 	const onSubmit = async () => {

@@ -52,7 +52,7 @@ export const AddPost = () => {
 				text,
 			}
 
-			const { data } = await axios.get('/posts', fields)
+			const { data } = await axios.post('/posts', fields)
 
 			const id = data._id
 

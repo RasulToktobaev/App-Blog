@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { useDispatch } from 'react-redux'
 import { UserInfo } from '../UserInfo'
 import styles from './Post.module.scss'
 import { PostSkeleton } from './Skeleton'
@@ -25,11 +26,15 @@ export const Post = ({
 	isLoading,
 	isEditable,
 }) => {
+	const dispatch = useDispatch()
+
 	if (isLoading) {
 		return <PostSkeleton />
 	}
 
-	const onClickRemove = () => {}
+	const onClickRemove = () => {
+		dispatch()
+	}
 
 	return (
 		<div className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>

@@ -62,7 +62,7 @@ export const Home = () => {
 						items={[
 							{
 								user: {
-									fullName: 'Давид Пупкин',
+									fullName: 'Роман Сопрыкин',
 									avatarUrl: 'https://mui.com/static/images/avatar/1.jpg',
 								},
 								text: 'Это пробный комментарий',

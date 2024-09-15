@@ -64,10 +64,6 @@ const postSlice = createSlice({
             state.posts.items = state.posts.items.filter(obj => obj._id === action.payload)
 
         },
-        [fetchRemovePost.fulfilled]: (state, action) => {
-            state.tags.items = action.payload;
-            state.tags.status = 'loaded';
-        },
         [fetchRemovePost.rejected]: (state) => {
             state.tags.items = [];
             state.tags.status = 'error';

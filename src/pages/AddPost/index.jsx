@@ -70,7 +70,7 @@ export const AddPost = () => {
 				setTitle(res.title)
 				setText(res.text)
 				setImageUrl(res.imageUrl)
-				setTags(res.tags)
+				setTags(res.tags.join(','))
 			})
 		}
 	}, [])

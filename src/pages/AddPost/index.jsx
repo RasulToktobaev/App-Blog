@@ -64,6 +64,17 @@ export const AddPost = () => {
 		}
 	}
 
+	React.useEffect(() => {
+		if (id) {
+			axios.get(`/posts/${id}`).then((res) => {
+				setTitle(res.title)
+				setText(res.text)
+				setImageUrl(res.imageUrl)
+				setTags(res.tags)
+			})
+		}
+	}, [])
+
 	const options = React.useMemo(
 		() => ({
 			spellChecker: false,

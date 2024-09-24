@@ -68,11 +68,11 @@ export const AddPost = () => {
 		if (id) {
 			axios
 				.get(`/posts/${id}`)
-				.then((res) => {
-					setTitle(res.title)
-					setText(res.text)
-					setImageUrl(res.imageUrl)
-					setTags(res.tags.join(','))
+				.then(({ data }) => {
+					setTitle(data.title)
+					setText(data.text)
+					setImageUrl(data.imageUrl)
+					setTags(data.tags.join(','))
 				})
 				.catch((err) => {
 					console.warn(err)

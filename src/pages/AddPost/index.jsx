@@ -21,6 +21,8 @@ export const AddPost = () => {
 	const [imageUrl, setImageUrl] = React.useState('')
 	const inputFileRef = React.useRef(null)
 
+	const isEditing = Boolean(id)
+
 	const handleChangeFile = async (event) => {
 		try {
 			const formData = new FormData()
@@ -157,7 +159,7 @@ export const AddPost = () => {
 			/>
 			<div className={styles.buttons}>
 				<Button onClick={onSubmit} size="large" variant="contained">
-					Опубликовать
+					{isEditing ? 'Сохранить' : 'Опубликовать'}
 				</Button>
 				<a href="/">
 					<Button size="large">Отмена</Button>

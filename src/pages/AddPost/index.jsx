@@ -55,7 +55,9 @@ export const AddPost = () => {
 				text,
 			}
 
-			const { data } = await axios.post('/posts', fields)
+			const { data } = isEditing
+				? await axios.patch('/posts', fields)
+				: await axios.post('/posts', fields)
 
 			const id = data._id
 

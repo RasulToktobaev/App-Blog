@@ -64,7 +64,7 @@ export const AddPost = () => {
 			navigate(`/post/${id}`)
 		} catch (err) {
 			console.warn(err)
-			alert('Ошибка при добавление  статьи')
+			alert('Ошибка при созданий  статьи')
 		}
 	}
 

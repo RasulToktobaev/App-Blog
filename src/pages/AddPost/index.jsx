@@ -164,7 +164,7 @@ export const AddPost = () => {
 					{isEditing ? 'Сохранить' : 'Опубликовать'}
 				</Button>
 				<a href="/">
-					<Button size="large">Отмена</Button>
+					<Button size="large">Отменить</Button>
 				</a>
 			</div>
 		</Paper>
